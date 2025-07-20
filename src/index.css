@@ -3,14 +3,50 @@
 @font-face {
   font-family: Satoshi;
   src: url("./assets/fonts/Satoshi-Regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Satoshi;
+  src: url("./assets/fonts/Satoshi-Bold.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: integralcf;
+  src: url("./assets/fonts/Fontspring-DEMO-integralcf-regular.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: integralcf;
+  src: url("./assets/fonts/Fontspring-DEMO-integralcf-bold.otf");
+  font-weight: bold;
 }
 
 @theme {
   --font-satoshi: Satoshi;
-
+  --font-integralcf: integralcf;
   --color-lightGrey: #f0f0f0;
 }
 
 body {
   font-family: Satoshi;
+  scrollbar-gutter: stable;
+}
+
+.container {
+  width: 100%;
+  @media (width >= 40rem /* 640px */) {
+    max-width: 40rem /* 640px */;
+  }
+  @media (width >= 48rem /* 768px */) {
+    max-width: 48rem /* 768px */;
+  }
+  @media (width >= 64rem /* 1024px */) {
+    max-width: 64rem /* 1024px */;
+  }
+  @media (width >= 80rem /* 1280px */) {
+    max-width: 80rem /* 1280px */;
+  }
 }

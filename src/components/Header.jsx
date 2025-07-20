@@ -2,11 +2,11 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white shadow-xs">
       <div className="flex container mx-auto py-6 px-4 xl:px-0 w-full justify-between">
         <div className="flex text-2xl items-center gap-4">
-          <i class="fa-solid fa-bars"></i>
-          <h2>SHOP.CO</h2>
+          <i className="fa-solid fa-bars md:!hidden"></i>
+          <h2 className="font-integralcf font-bold">SHOP.CO</h2>
         </div>
 
         <ul className="items-center gap-3 lg:gap-6 hidden md:flex">
@@ -25,7 +25,7 @@ const Header = () => {
         </ul>
 
         <div className="relative md:flex items-center hidden">
-          <i class="fa-solid fa-magnifying-glass absolute left-4"></i>
+          <i className="fa-solid fa-magnifying-glass absolute left-4"></i>
           <input
             className="bg-lightGrey rounded-full py-3 pl-10 lg:w-100 xl:w-145"
             type="text"
@@ -34,9 +34,9 @@ const Header = () => {
         </div>
 
         <div className="flex text-2xl gap-3 items-center">
-          <i class="fa-solid fa-magnifying-glass md:!hidden"></i>
-          <i class="fa-solid fa-cart-shopping"></i>
-          <i class="fa-regular fa-user"></i>
+          <i class="fa-solid fa-magnifying-glass text-2xl md:!hidden"></i>
+          <i class="fa-solid fa-cart-shopping text-2xl"></i>
+          <i class="fa-regular fa-user text-2xl"></i>
         </div>
       </div>
     </header>

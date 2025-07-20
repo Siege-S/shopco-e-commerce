@@ -13,7 +13,7 @@ const TopBar = () => {
   return (
     <div className="bg-black ">
       <div className="relative container mx-auto flex justify-center md:px-4 xl:px-0">
-        <h3 className="font-satoshi text-xs text-center py-2.5  text-white">
+        <h3 className="font-satoshi text-xs text-center py-2.5 text-white md:text-sm">
           Sign up and get 20% off to your first order.{" "}
           <a className="underline underline-offset-2" href="#">
             Sign Up Now
