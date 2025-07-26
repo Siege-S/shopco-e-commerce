@@ -32,7 +32,6 @@
 
 body {
   font-family: Satoshi;
-  scrollbar-gutter: stable;
 }
 
 .container {
@@ -49,4 +48,8 @@ body {
   @media (width >= 80rem /* 1280px */) {
     max-width: 80rem /* 1280px */;
   }
+}
+
+.scroll-hidden {
+  scrollbar-color: transparent transparent;
 }

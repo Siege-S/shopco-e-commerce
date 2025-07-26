@@ -1,62 +1,67 @@
-import React from "react";
-import test from "../../../php/uploads/T-shirt1.svg";
+import StarRating from "../../components/StarRating";
+import ItemsScroll from "../../components/ItemsScroll";
 const NewArrivalSection = () => {
+  const [data, setData] = useState([]);
+  const [isloading, setIsLoading] = useState(true);
+  const getAPI = import.meta.env.VITE_API_URL_GET_NEW_ARRIVAL;
+  const getApiImage = import.meta.env.VITE_API_IMAGE_PATH;
+  useEffect(() => {
+    try {
+      fetch(getAPI)
+        .then((res) => res.json())
+        .then((data) => {
+          setData(data);
+          console.log(data);
+        })
+        .catch((error) => console.error(error));
+    } catch (error) {}
+  }, []);
+
   return (
-    <section className="container mx-auto px-4 py-12.5 xl-px-0">
-      <h2 className="font-integralcf font-bold text-3xl text-center mb-8">
+    <section className="container mx-auto px-4 py-12.5 xl:px-0">
+      <h2 className="font-integralcf font-bold text-3xl text-center">
         NEW ARRIVALS
       </h2>
-
-      <div className="flex overflow-scroll gap-4">
-        <figure className="w-50">
-          <div className="size-50 mb-2.5">
-            <img className="rounded-xl" src={test} alt="" />
-          </div>
-          <div className="flex flex-col gap-y1">
-            <figcaption className="font-bold">
-              T-shirt with Tape Details
-            </figcaption>
-            <input type="range" min={0} max={5} />
-            <span className="text-xl font-bold">$120</span>
-          </div>
-        </figure>
-        <figure className="w-50">
-          <div className="size-50 mb-2.5">
-            <img className="rounded-xl" src={test} alt="" />
-          </div>
-          <div className="flex flex-col gap-y1">
-            <figcaption className="font-bold">
-              T-shirt with Tape Details
-            </figcaption>
-            <input type="range" min={0} max={5} />
-            <span className="text-xl font-bold">$120</span>
-          </div>
-        </figure>
-        <figure className="w-50">
-          <div className="size-50 mb-2.5">
-            <img className="rounded-xl" src={test} alt="" />
-          </div>
-          <div className="flex flex-col gap-y1">
-            <figcaption className="font-bold">
-              T-shirt with Tape Details
-            </figcaption>
-            <input type="range" min={0} max={5} />
-            <span className="text-xl font-bold">$120</span>
-          </div>
-        </figure>
-        <figure className="w-50">
-          <div className="size-50 mb-2.5">
-            <img className="rounded-xl" src={test} alt="" />
-          </div>
-          <div className="flex flex-col gap-y1">
-            <figcaption className="font-bold">
-              T-shirt with Tape Details
-            </figcaption>
-            <input type="range" min={0} max={5} />
-            <span className="text-xl font-bold">$120</span>
-          </div>
-        </figure>
+      {data.length > 0 ? (
+        <div className="scroll-hidden select-none flex overflow-auto gap-4 xl:justify-between py-9">
+          <ItemsScroll>
+            {data.map((items) => (
+              <div key={items.id} className="">
+                <figure className="min-w-50 max-w-75 mb-2.5 overflow-hidden rounded-xl">
+                  <img
+                    className="hover:scale-110 ease-in duration-100"
+                    src={`${getApiImage}${items.images}`}
+                    alt=""
+                    draggable="false"
+                  />
+                </figure>
+                <div className="flex flex-col gap-y1">
+                  <figcaption className="font-bold lg:text-xl capitalize">
+                    {items.item}
+                  </figcaption>
+                  <div className="flex gap-1">
+                    <StarRating value={items.rating} />
+                    <span className="my-auto text-xs lg:text-sm">
+                      {items.rating}/5
+                    </span>
+                  </div>
+                  <span className="text-xl font-bold xl:text-2xl">{`$${items.price}`}</span>
+                </div>
+              </div>
+            ))}
+          </ItemsScroll>
+        </div>
+      ) : (
+        <h3 className="opacity-60 font-bold text-2xl text-center">
+          No Items Found
+        </h3>
+      )}
+      <div className="flex justify-center">
+        <button className="border-2 border-gray-300 py-3.5 px-20 w-full rounded-full text-sm font-bold md:w-fit">
+          View All
+        </button>
       </div>
+      <hr className="border-t border-gray-300 mt-16" />
     </section>
   );
 };
