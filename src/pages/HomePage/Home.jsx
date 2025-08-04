@@ -3,6 +3,8 @@ import TopBar from "../../components/TopBar";
 import Header from "../../components/Header";
 import HeroSection from "./HeroSection";
 import NewArrivalSection from "./NewArrivalSection";
+import TopSellingSection from "./TopSellingSection";
+import DressStyleSection from "./DressStyleSection";
 const Home = () => {
   return (
     <>
@@ -15,6 +17,12 @@ const Home = () => {
       </div>
       <div>
         <NewArrivalSection />
+      </div>
+      <div>
+        <TopSellingSection />
+      </div>
+      <div>
+        <DressStyleSection />
       </div>
     </>
   );

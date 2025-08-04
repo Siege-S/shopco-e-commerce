@@ -9,19 +9,17 @@ function ItemsScroll({ children }) {
   const handleMouseDown = (e) => {
     isDown = true;
     const slider = scrollRef.current;
-    slider.classList.add("cursor-grabbing");
+
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
   };
 
   const handleMouseLeave = () => {
     isDown = false;
-    scrollRef.current.classList.remove("cursor-grabbing");
   };
 
   const handleMouseUp = () => {
     isDown = false;
-    scrollRef.current.classList.remove("cursor-grabbing");
   };
 
   const handleMouseMove = (e) => {
@@ -40,7 +38,7 @@ function ItemsScroll({ children }) {
       onMouseLeave={handleMouseLeave}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
-      className="scroll-hidden flex overflow-auto gap-4 xl:justify-between py-9"
+      className="scroll-hidden flex overflow-auto gap-4 xl:justify-between"
     >
       {children}
     </div>
