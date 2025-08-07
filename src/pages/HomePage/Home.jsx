@@ -5,6 +5,7 @@ import HeroSection from "./HeroSection";
 import NewArrivalSection from "./NewArrivalSection";
 import TopSellingSection from "./TopSellingSection";
 import DressStyleSection from "./DressStyleSection";
+import Footer from "../../components/Footer";
 const Home = () => {
   return (
     <>
@@ -23,6 +24,9 @@ const Home = () => {
       </div>
       <div>
         <DressStyleSection />
+      </div>
+      <div>
+        <Footer />
       </div>
     </>
   );
