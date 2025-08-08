@@ -1,10 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import { Navigation } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
+import { useSwiper } from "swiper/react";
+
 import { useState } from "react";
 
 import leftArrow from "../../assets/icons/left_arrow.svg";
@@ -56,6 +58,8 @@ const reviews = [
 
 const CustomerReviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const swiper = useSwiper();
+  const swiperRef = useRef();
   useEffect(() => {
     console.log("current index: " + currentIndex);
   }, [currentIndex]);
@@ -66,19 +70,36 @@ const CustomerReviews = () => {
           Our Happy Customers
         </h1>
         <div className="flex items-center gap-4">
-          <img className="size-6" src={leftArrow} alt="left arrow" />
-          <img className="size-6" src={rightArrow} alt="right arrow" />
+          <img
+            className="size-6 cursor-pointer"
+            onClick={() => swiperRef.current.slidePrev()}
+            src={leftArrow}
+            alt="left arrow"
+          />
+          <img
+            className="size-6 cursor-pointer"
+            onClick={() => swiperRef.current.slideNext()}
+            src={rightArrow}
+            alt="right arrow"
+          />
         </div>
       </div>
 
       <Swiper
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         loop={true}
         centeredSlides={true}
         slidesPerView={3.5}
         spaceBetween={20}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         onSlideChange={(swiper) => setCurrentIndex(swiper.realIndex)}
-        onSwiper={(swiper) => setCurrentIndex(swiper.realIndex)}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+          setCurrentIndex(swiper.realIndex);
+        }}
         breakpoints={{
           0: {
             slidesPerView: 1,
@@ -94,7 +115,7 @@ const CustomerReviews = () => {
             slidesPerView: 3.5,
             centeredSlides: true,
           },
-          1536: {
+          2560: {
             slidesPerView: 4.5,
             centeredSlides: true,
           },

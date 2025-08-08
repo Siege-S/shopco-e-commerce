@@ -120,9 +120,29 @@ const Footer = () => {
           </div>
 
           <hr className="pb-4 opacity-10" />
-          <div className="md:flex md: justify-between items-center">
-            <div className="flex flex-col items-center opacity-60 text-sm mb-4">
-              <h5>Shop.co © 2000-2023, All Rights Reserved</h5>
+          <div className="md:flex md:justify-between items-center">
+            <div className="flex flex-col justify-center opacity-60 text-sm mb-4 md:mb-0">
+              <h5 className="text-center md:text-start">
+                Shop.co © 2000-2023, All Rights Reserved
+              </h5>
+              <span className="text-center">
+                developed by{" "}
+                <a
+                  className="underline"
+                  target="_blank"
+                  href="https://github.com/Siege-S"
+                >
+                  Siege-S
+                </a>{" "}
+                | original design by{" "}
+                <a
+                  className="underline"
+                  target="_blank"
+                  href="https://www.figma.com/community/file/1273571982885059508"
+                >
+                  Hamza Naeem
+                </a>
+              </span>
             </div>
             <div className="flex justify-center gap-2.5">
               <img

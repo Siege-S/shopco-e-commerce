@@ -13,6 +13,12 @@ const TopSellingSection = () => {
         console.log(data);
       });
   }, []);
+
+  const calcDiscount = (price, discount) => {
+    const totalDiscount = price * (discount / 100);
+    return Math.round(price - totalDiscount);
+  };
+
   return (
     <section className="container mx-auto px-4 mb-20 xl:px-0">
       <h2 className="font-integralcf font-bold text-3xl text-center mb-13.75">
@@ -40,7 +46,25 @@ const TopSellingSection = () => {
                     {items.rating}/5
                   </span>
                 </div>
-                <span className="text-xl font-bold xl:text-2xl">{`$${items.price}`}</span>
+                <div className="flex gap-1.25 items-center">
+                  <span className="text-xl font-bold xl:text-2xl">{`${
+                    items.discount > 0
+                      ? `$${calcDiscount(items.price, items.discount)}`
+                      : ""
+                  }`}</span>
+
+                  <span
+                    className={`text-xl font-bold xl:text-2xl ${
+                      items.discount > 0 ? "line-through opacity-40" : ""
+                    }`}
+                  >{`$${items.price}`}</span>
+
+                  <span
+                    className={`text-xs font-medium rounded-full text-red-500 px-2 py-.75 xl:text-2xl ${
+                      items.discount > 0 ? "bg-red-200" : ""
+                    }`}
+                  >{`${items.discount > 0 ? `${items.discount}%` : ""}`}</span>
+                </div>
               </div>
             </div>
           ))}
