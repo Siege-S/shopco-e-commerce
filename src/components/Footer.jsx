@@ -3,6 +3,11 @@ import twitterLogo from "../assets/logos/logos_twitter.svg";
 import facebookLogo from "../assets/logos/logo_facebook.svg";
 import instagramLogo from "../assets/logos/logo_instagram.svg";
 import githubLogo from "../assets/logos/logo_github.svg";
+import paymentVisa from "../assets/logos/payment_visa.svg";
+import paymentMaster from "../assets/logos/payment_master.svg";
+import paymentPaypal from "../assets/logos/payment_paypal.svg";
+import paymentApple from "../assets/logos/payment_apple.svg";
+import paymentGoogle from "../assets/logos/payment_google.svg";
 const Footer = () => {
   return (
     <>
@@ -27,7 +32,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <footer className="bg-lightGrey pt-43 md:pt-28 lg:pt-35 xl:pt-28">
+      <footer className="bg-lightGrey pt-43 pb-19 md:pt-28 lg:pt-35 xl:pt-28">
         <div className="container mx-auto px-4 xl:px-0 ">
           <div className="lg:flex lg:justify-between">
             <div className="lg:w-[248px]">
@@ -115,9 +120,37 @@ const Footer = () => {
           </div>
 
           <hr className="pb-4 opacity-10" />
-
-          <div className="flex flex-col items-center">
-            <h5>Shop.co © 2000-2023, All Rights Reserved</h5>
+          <div className="md:flex md: justify-between items-center">
+            <div className="flex flex-col items-center opacity-60 text-sm mb-4">
+              <h5>Shop.co © 2000-2023, All Rights Reserved</h5>
+            </div>
+            <div className="flex justify-center gap-2.5">
+              <img
+                className="py-2 px-1.5 bg-white rounded-sm shadow-md"
+                src={paymentVisa}
+                alt="payment visa"
+              />
+              <img
+                className="py-2 px-1.5 bg-white rounded-sm shadow-md"
+                src={paymentMaster}
+                alt="payment master"
+              />
+              <img
+                className="py-2 px-1.5 bg-white rounded-sm shadow-md"
+                src={paymentPaypal}
+                alt="payment paypal"
+              />
+              <img
+                className="py-2 px-1.5 bg-white rounded-sm shadow-md"
+                src={paymentApple}
+                alt="payment apple"
+              />
+              <img
+                className="py-2 px-1.5 bg-white rounded-sm shadow-md"
+                src={paymentGoogle}
+                alt="payment google"
+              />
+            </div>
           </div>
         </div>
       </footer>
