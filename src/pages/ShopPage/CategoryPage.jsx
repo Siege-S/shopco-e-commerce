@@ -11,6 +11,7 @@ import dress5 from "../../../php/uploads/checkered1.svg";
 import dress6 from "../../../php/uploads/striped-t-shirt.svg";
 
 import FilterAside from "../../components/FilterAside";
+import { Link } from "react-router-dom";
 const items = [
   {
     name: "gradient graphic t-shirt",
@@ -63,7 +64,7 @@ const CategoryPage = ({ toggleFilter }) => {
         <nav className="my-5">
           <ol className="flex gap-1 text-gray-400">
             <li>
-              <a href="/">Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
               <svg
@@ -82,7 +83,7 @@ const CategoryPage = ({ toggleFilter }) => {
               </svg>
             </li>
             <li>
-              <a href="/shop">Casual</a>
+              <Link to="/shop">Casual</Link>
             </li>
           </ol>
         </nav>

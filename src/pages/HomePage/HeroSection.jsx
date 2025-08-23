@@ -5,6 +5,7 @@ import BrandZara from "../../assets/logos/brand-zara.svg";
 import BrandGucci from "../../assets/logos/brand-gucci.svg";
 import BrandPrada from "../../assets/logos/brand-prada.svg";
 import BrandCalvin from "../../assets/logos/brand-calvinklein.svg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -19,9 +20,11 @@ const HeroSection = () => {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <button className="bg-black py-3.75 text-white font-medium w-full rounded-full mb-5 md:w-52.5 xl:mb-12">
-            Shop Now
-          </button>
+          <Link to="/shop">
+            <button className="bg-black py-3.75 text-white font-medium w-full rounded-full mb-5 md:w-52.5 xl:mb-12">
+              Shop Now
+            </button>
+          </Link>
 
           <div className="lg:flex pb-5">
             <div className="flex mb-3 flex-2/3 lg:mb-0">

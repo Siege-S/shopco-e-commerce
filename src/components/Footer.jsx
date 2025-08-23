@@ -16,7 +16,7 @@ const Footer = () => {
           <h2 className="text-white font-bold font-integralcf text-3xl py-8 md:py-0 lg:text-[40px] md:w-1/2">
             STAY UPTO DATE ABOUT OUR LATEST OFFERS
           </h2>
-          <div className="flex flex-col justify-end md:w-[280px] lg:w-[349px]">
+          <div className="flex flex-col justify-end md:justify-center md:w-[280px] lg:w-[349px]">
             <div className="mb-3">
               <input
                 className="bg-white w-full rounded-full p-3 text-sm"

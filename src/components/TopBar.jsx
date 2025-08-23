@@ -22,7 +22,7 @@ const TopBar = () => {
 
         <i
           onClick={handleClick}
-          className="fa-solid fa-xmark absolute right-5 top-2.5 text-white !hidden md:!flex"
+          className="fa-solid fa-xmark absolute right-5 top-2.5 cursor-pointer text-white !hidden md:!flex"
         ></i>
       </div>
     </div>

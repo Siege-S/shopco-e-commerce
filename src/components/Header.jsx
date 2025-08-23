@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = ({ toggleSideBar }) => {
   return (
@@ -9,7 +10,9 @@ const Header = ({ toggleSideBar }) => {
             className="fa-solid fa-bars md:!hidden"
             onClick={toggleSideBar}
           ></i>
-          <h2 className="font-integralcf font-bold">SHOP.CO</h2>
+          <Link to="/">
+            <h2 className="font-integralcf font-bold">SHOP.CO</h2>
+          </Link>
         </div>
 
         <ul className="items-center gap-3 lg:gap-6 hidden md:flex">
