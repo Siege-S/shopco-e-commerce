@@ -1,0 +1,50 @@
+[
+  {
+    "name": "gradient graphic t-shirt",
+    "description": "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+    "rating": 3.5,
+    "price": 145,
+    "discount": 0,
+    "image": "/php/uploads/graphic-t-shirt.svg"
+  },
+  {
+    "name": "polo with tipping details",
+    "description": "A classic polo designed with subtle tipping details for a modern touch. Soft, breathable fabric ensures all-day comfort and versatility.",
+    "rating": 4.5,
+    "price": 180,
+    "discount": 0,
+    "image": "/php/uploads/polo-shirt.svg"
+  },
+  {
+    "name": "black striped t-shirt",
+    "description": "A stylish striped t-shirt that blends casual and modern appeal. Made with lightweight fabric, it keeps you cool and comfortable anywhere.",
+    "rating": 5,
+    "price": 120,
+    "discount": 30,
+    "image": "/php/uploads/black-and-white-shirt.svg"
+  },
+  {
+    "name": "skinny fit jeans",
+    "description": "These skinny fit jeans provide a sleek and modern silhouette. Crafted with stretchable fabric, they ensure comfort and flexibility all day.",
+    "rating": 3.5,
+    "price": 240,
+    "discount": 20,
+    "image": "/php/uploads/jeans2.svg"
+  },
+  {
+    "name": "checkered shirt",
+    "description": "A timeless checkered shirt perfect for smart-casual looks. Its soft cotton fabric provides breathable comfort and effortless everyday style.",
+    "rating": 4.5,
+    "price": 180,
+    "discount": 0,
+    "image": "/php/uploads/checkered1.svg"
+  },
+  {
+    "name": "sleeve striped t-shirt",
+    "description": "This striped sleeve t-shirt adds a sporty and casual vibe. Lightweight and breathable, it is perfect for everyday wear and easy styling.",
+    "rating": 4.5,
+    "price": 130,
+    "discount": 30,
+    "image": "/php/uploads/striped-t-shirt.svg"
+  }
+]

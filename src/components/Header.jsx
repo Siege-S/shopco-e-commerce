@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = ({ toggleSideBar }) => {
+  const cart = JSON.parse(localStorage.getItem("cart"));
+  const count = cart.cartItems.reduce((sum, item) => sum + item.quantity, 0);
   return (
     <header className="bg-white shadow-xs">
       <div className="flex container mx-auto py-6 px-4 xl:px-0 w-full justify-between">
@@ -17,16 +19,16 @@ const Header = ({ toggleSideBar }) => {
 
         <ul className="items-center gap-3 lg:gap-6 hidden md:flex">
           <li>
-            <a href="#">Shop</a>
+            <Link to="/shop">Shop</Link>
           </li>
           <li>
-            <a href="#">On Sale</a>
+            <Link to="/shop">On Sale</Link>
           </li>
           <li>
-            <a href="#">New Arrivals</a>
+            <Link to="/shop">New Arrivals</Link>
           </li>
           <li>
-            <a href="#">Brands</a>
+            <Link to="/shop">Brands</Link>
           </li>
         </ul>
 
@@ -41,8 +43,11 @@ const Header = ({ toggleSideBar }) => {
 
         <div className="flex text-2xl gap-3 items-center">
           <i className="fa-solid fa-magnifying-glass text-2xl md:!hidden"></i>
-          <i className="fa-solid fa-cart-shopping text-2xl"></i>
-          <i className="fa-regular fa-user text-2xl"></i>
+
+          <Link to="/cart">
+            <i className="fa-solid fa-cart-shopping text-2xl cursor-pointer"></i>
+          </Link>
+          <i className="fa-regular fa-user text-2xl cursor-pointer"></i>
         </div>
       </div>
     </header>

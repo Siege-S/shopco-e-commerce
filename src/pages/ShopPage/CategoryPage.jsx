@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import filterIcon from "../../assets/icons/filter_icon.svg";
 import StarRating from "../../components/StarRating";
@@ -12,51 +12,61 @@ import dress6 from "../../../php/uploads/striped-t-shirt.svg";
 
 import FilterAside from "../../components/FilterAside";
 import { Link } from "react-router-dom";
-const items = [
-  {
-    name: "gradient graphic t-shirt",
-    rating: 3.5,
-    price: 145,
-    discount: 0,
-    image: dress1,
-  },
-  {
-    name: "polo with tipping details",
-    rating: 4.5,
-    price: 180,
-    discount: 0,
-    image: dress2,
-  },
-  {
-    name: "black striped t-shirt",
-    rating: 5,
-    price: 120,
-    discount: 30,
-    image: dress3,
-  },
-  {
-    name: "skinny fit jeans",
-    rating: 3.5,
-    price: 240,
-    discount: 20,
-    image: dress4,
-  },
-  {
-    name: "checkered shirt",
-    rating: 4.5,
-    price: 180,
-    discount: 0,
-    image: dress5,
-  },
-  {
-    name: "sleeve striped t-shirt",
-    rating: 4.5,
-    price: 130,
-    discount: 30,
-    image: dress6,
-  },
-];
+// const items = [
+//   {
+//     name: "gradient graphic t-shirt",
+//     rating: 3.5,
+//     price: 145,
+//     discount: 0,
+//     image: dress1,
+//   },
+//   {
+//     name: "polo with tipping details",
+//     rating: 4.5,
+//     price: 180,
+//     discount: 0,
+//     image: dress2,
+//   },
+//   {
+//     name: "black striped t-shirt",
+//     rating: 5,
+//     price: 120,
+//     discount: 30,
+//     image: dress3,
+//   },
+//   {
+//     name: "skinny fit jeans",
+//     rating: 3.5,
+//     price: 240,
+//     discount: 20,
+//     image: dress4,
+//   },
+//   {
+//     name: "checkered shirt",
+//     rating: 4.5,
+//     price: 180,
+//     discount: 0,
+//     image: dress5,
+//   },
+//   {
+//     name: "sleeve striped t-shirt",
+//     rating: 4.5,
+//     price: 130,
+//     discount: 30,
+//     image: dress6,
+//   },
+// ];
+
 const CategoryPage = ({ toggleFilter }) => {
+  const [clothesItems, setClothesItems] = useState([]);
+  useEffect(() => {
+    fetch("/categoryItems.json")
+      .then((result) => result.json())
+      .then((data) => {
+        console.log(data);
+        setClothesItems(data);
+      });
+  }, []);
   return (
     <>
       <section className="container mx-auto px-4 xl:px-0">
@@ -82,7 +92,7 @@ const CategoryPage = ({ toggleFilter }) => {
                 />
               </svg>
             </li>
-            <li>
+            <li className="text-black">
               <Link to="/shop">Casual</Link>
             </li>
           </ol>
@@ -109,7 +119,7 @@ const CategoryPage = ({ toggleFilter }) => {
               />
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6">
-              {items.map((data, index) => (
+              {clothesItems.map((data, index) => (
                 <figure key={index}>
                   <img
                     className="w-full mb-2"

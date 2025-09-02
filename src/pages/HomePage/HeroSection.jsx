@@ -21,7 +21,7 @@ const HeroSection = () => {
             style.
           </p>
           <Link to="/shop">
-            <button className="bg-black py-3.75 text-white font-medium w-full rounded-full mb-5 md:w-52.5 xl:mb-12">
+            <button className="bg-black py-3.75 text-white font-medium cursor-pointer w-full rounded-full duration-300 hover:bg-black/90 mb-5 md:w-52.5 xl:mb-12">
               Shop Now
             </button>
           </Link>

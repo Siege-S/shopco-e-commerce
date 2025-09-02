@@ -1,6 +1,6 @@
 function StarRating({ value = 0, max = 5 }) {
   return (
-    <div className="flex gap-1">
+    <div className="flex gap-1 items-center">
       {Array.from({ length: max }).map((_, i) => {
         const index = i + 1;
         const full = index <= value;
@@ -42,6 +42,9 @@ function StarRating({ value = 0, max = 5 }) {
           </span>
         );
       })}
+      <span className="text-xs">
+        {value}/{max}
+      </span>
     </div>
   );
 }

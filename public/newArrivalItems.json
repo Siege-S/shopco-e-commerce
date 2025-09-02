@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "t-shirt with tape details",
+    "description": "A trendy t-shirt designed with stylish tape details for a modern edge. Made with breathable fabric, it ensures comfort and effortless style.",
+    "rating": 4.5,
+    "price": 120,
+    "discount": 0,
+    "image": "/php/uploads/T-shirt1.svg"
+  },
+  {
+    "id": 2,
+    "name": "skinny fit jeans",
+    "description": "These skinny fit jeans provide a sleek and modern silhouette. Crafted with stretchable fabric, they ensure comfort and flexibility all day.",
+    "rating": 3.5,
+    "price": 260,
+    "discount": 20,
+    "image": "/php/uploads/jeans1.svg"
+  },
+  {
+    "id": 3,
+    "name": "checkered shirt",
+    "description": "A timeless checkered shirt perfect for smart-casual looks. Its soft cotton fabric provides breathable comfort and effortless everyday style.",
+    "rating": 4.5,
+    "price": 180,
+    "discount": 0,
+    "image": "/php/uploads/checkered1.svg"
+  },
+  {
+    "id": 4,
+    "name": "sleeve striped t-shirt",
+    "description": "This striped sleeve t-shirt adds a sporty and casual vibe. Lightweight and breathable, it is perfect for everyday wear and easy styling.",
+    "rating": 4.5,
+    "price": 160,
+    "discount": 30,
+    "image": "/php/uploads/striped-t-shirt.svg"
+  }
+]

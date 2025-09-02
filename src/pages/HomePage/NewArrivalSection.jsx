@@ -1,18 +1,24 @@
 import StarRating from "../../components/StarRating";
 import ItemsScroll from "../../components/ItemsScroll";
 import { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 const NewArrivalSection = () => {
   const [data, setData] = useState([]);
 
   const getAPI = import.meta.env.VITE_API_URL_GET_NEW_ARRIVAL;
   const getApiImage = import.meta.env.VITE_API_IMAGE_PATH;
+
+  const navigate = useNavigate();
+  const handleClick = (id, item) => {
+    navigate(`/shop/product/${id}/${item}`);
+  };
   useEffect(() => {
     try {
-      fetch(getAPI)
+      fetch("/newArrivalItems.json")
         .then((res) => res.json())
         .then((data) => {
           setData(data);
-          // console.log(data);
+          console.log(data);
         })
         .catch((error) => console.error(error));
     } catch (error) {}
@@ -30,24 +36,27 @@ const NewArrivalSection = () => {
       {data.length > 0 ? (
         <ItemsScroll>
           {data.map((items) => (
-            <div key={items.id} className="select-none cursor-pointer">
+            <div
+              key={items.id}
+              className="select-none cursor-pointer"
+              onClick={() => {
+                handleClick(items.id, items.name);
+              }}
+            >
               <figure className="min-w-50 max-w-75 mb-2.5 overflow-hidden rounded-xl">
                 <img
-                  className="hover:scale-110 ease-in duration-100"
-                  src={`${getApiImage}${items.images}`}
-                  alt=""
+                  className="hover:scale-110 ease-in duration-100 "
+                  // src={`${getApiImage}${items.images}`}
+                  src={items.image}
                   draggable="false"
                 />
               </figure>
               <div className="flex flex-col gap-y1">
                 <figcaption className="font-bold lg:text-xl capitalize">
-                  {items.item}
+                  {items.name}
                 </figcaption>
                 <div className="flex gap-1">
                   <StarRating value={items.rating} />
-                  <span className="my-auto text-xs lg:text-sm">
-                    {items.rating}/5
-                  </span>
                 </div>
                 <div className="flex gap-1.25 items-center">
                   <span className="text-xl font-bold xl:text-2xl">{`${
