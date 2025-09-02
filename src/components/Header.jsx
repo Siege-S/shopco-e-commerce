@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = ({ toggleSideBar }) => {
-  const cart = JSON.parse(localStorage.getItem("cart"));
-  const count = cart.cartItems.reduce((sum, item) => sum + item.quantity, 0);
   return (
     <header className="bg-white shadow-xs">
       <div className="flex container mx-auto py-6 px-4 xl:px-0 w-full justify-between">
