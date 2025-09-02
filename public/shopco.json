@@ -1,0 +1,227 @@
+{
+  "NewArrival": [
+    {
+      "id": 1,
+      "name": "t-shirt with tape details",
+      "description": "A trendy t-shirt designed with stylish tape details for a modern edge. Made with breathable fabric, it ensures comfort and effortless style.",
+      "rating": 4.5,
+      "price": 120,
+      "discount": 0,
+      "image": "/images/T-shirt1.svg"
+    },
+    {
+      "id": 2,
+      "name": "skinny fit jeans",
+      "description": "These skinny fit jeans provide a sleek and modern silhouette. Crafted with stretchable fabric, they ensure comfort and flexibility all day.",
+      "rating": 3.5,
+      "price": 260,
+      "discount": 20,
+      "image": "/images/jeans1.svg"
+    },
+    {
+      "id": 3,
+      "name": "checkered shirt",
+      "description": "A timeless checkered shirt perfect for smart-casual looks. Its soft cotton fabric provides breathable comfort and effortless everyday style.",
+      "rating": 4.5,
+      "price": 180,
+      "discount": 0,
+      "image": "/images/checkered1.svg"
+    },
+    {
+      "id": 4,
+      "name": "sleeve striped t-shirt",
+      "description": "This striped sleeve t-shirt adds a sporty and casual vibe. Lightweight and breathable, it is perfect for everyday wear and easy styling.",
+      "rating": 4.5,
+      "price": 160,
+      "discount": 30,
+      "image": "/images/shirt-orange.svg"
+    }
+  ],
+  "TopSelling": [
+    {
+      "id": 5,
+      "name": "vertical stripped shirt",
+      "description": "A trendy t-shirt designed with stylish tape details for a modern edge. Made with breathable fabric, it ensures comfort and effortless style.",
+      "rating": 5,
+      "price": 212,
+      "discount": 20,
+      "image": "/images/striped-t-shirt.svg"
+    },
+    {
+      "id": 6,
+      "name": "courage graphic t-shirt",
+      "description": "These skinny fit jeans provide a sleek and modern silhouette. Crafted with stretchable fabric, they ensure comfort and flexibility all day.",
+      "rating": 4,
+      "price": 145,
+      "discount": 0,
+      "image": "/images/graphic-t-shirt.svg"
+    },
+    {
+      "id": 7,
+      "name": "loose fit bermuda shorts",
+      "description": "A timeless checkered shirt perfect for smart-casual looks. Its soft cotton fabric provides breathable comfort and effortless everyday style.",
+      "rating": 3,
+      "price": 80,
+      "discount": 0,
+      "image": "/images/shorts1.svg"
+    },
+    {
+      "id": 8,
+      "name": "faded skinny jeans",
+      "description": "This striped sleeve t-shirt adds a sporty and casual vibe. Lightweight and breathable, it is perfect for everyday wear and easy styling.",
+      "rating": 4.5,
+      "price": 210,
+      "discount": 0,
+      "image": "/images/jeans2.svg"
+    }
+  ],
+  "CustomerReviews": [
+    {
+      "name": "Sarah M.",
+      "review": "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations."
+    },
+    {
+      "name": "Alex K.",
+      "review": "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions."
+    },
+    {
+      "name": "James L.",
+      "review": "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends."
+    },
+    {
+      "name": "Ethan R.",
+      "review": "This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt."
+    },
+    {
+      "name": "Samantha D.",
+      "review": "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt."
+    },
+    {
+      "name": "Olivia P.",
+      "review": "As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out."
+    },
+    {
+      "name": "Ava H.",
+      "review": "I'm not just wearing a t-shirt; I'm wearing a piece of design philosophy. The intricate details and thoughtful layout of the design make this shirt a conversation starter."
+    },
+    {
+      "name": "Liam K.",
+      "review": "This t-shirt is a fusion of comfort and creativity. The fabric is soft, and the design speaks volumes about the designer's skill. It's like wearing a piece of art that reflects my passion for both design and fashion."
+    }
+  ],
+  "TabReviews": [
+    {
+      "name": "Sarah M.",
+      "review": "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+      "date": "August 14, 2023"
+    },
+    {
+      "name": "Alex K.",
+      "review": "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions.",
+      "date": "August 15, 2023"
+    },
+    {
+      "name": "James L.",
+      "review": "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends.",
+      "date": "August 16, 2023"
+    },
+    {
+      "name": "Ethan R.",
+      "review": "This t-shirt is a must-have for anyone who appreciates good design. The minimalistic yet stylish pattern caught my eye, and the fit is perfect. I can see the designer's touch in every aspect of this shirt.",
+      "date": "August 17, 2023"
+    },
+    {
+      "name": "Samantha D.",
+      "review": "I absolutely love this t-shirt! The design is unique and the fabric feels so comfortable. As a fellow designer, I appreciate the attention to detail. It's become my favorite go-to shirt.",
+      "date": "August 18, 2023"
+    },
+    {
+      "name": "Olivia P.",
+      "review": "As a UI/UX enthusiast, I value simplicity and functionality. This t-shirt not only represents those principles but also feels great to wear. It's evident that the designer poured their creativity into making this t-shirt stand out.",
+      "date": "August 19, 2023"
+    }
+  ],
+  "CategoryItems": [
+    {
+      "id": 9,
+      "name": "gradient graphic t-shirt",
+      "description": "This graphic t-shirt which is perfect for any occasion. Crafted from a soft and breathable fabric, it offers superior comfort and style.",
+      "rating": 3.5,
+      "price": 145,
+      "discount": 0,
+      "image": "/images/graphic-t-shirt.svg"
+    },
+    {
+      "id": 10,
+      "name": "polo with tipping details",
+      "description": "A classic polo designed with subtle tipping details for a modern touch. Soft, breathable fabric ensures all-day comfort and versatility.",
+      "rating": 4.5,
+      "price": 180,
+      "discount": 0,
+      "image": "/images/polo-shirt.svg"
+    },
+    {
+      "id": 11,
+      "name": "black striped t-shirt",
+      "description": "A stylish striped t-shirt that blends casual and modern appeal. Made with lightweight fabric, it keeps you cool and comfortable anywhere.",
+      "rating": 5,
+      "price": 120,
+      "discount": 30,
+      "image": "/images/black-and-white-shirt.svg"
+    },
+    {
+      "id": 2,
+      "name": "skinny fit jeans",
+      "description": "These skinny fit jeans provide a sleek and modern silhouette. Crafted with stretchable fabric, they ensure comfort and flexibility all day.",
+      "rating": 3.5,
+      "price": 240,
+      "discount": 20,
+      "image": "/images/jeans2.svg"
+    },
+    {
+      "id": 3,
+      "name": "checkered shirt",
+      "description": "A timeless checkered shirt perfect for smart-casual looks. Its soft cotton fabric provides breathable comfort and effortless everyday style.",
+      "rating": 4.5,
+      "price": 180,
+      "discount": 0,
+      "image": "/images/checkered1.svg"
+    },
+    {
+      "id": 4,
+      "name": "sleeve striped t-shirt",
+      "description": "This striped sleeve t-shirt adds a sporty and casual vibe. Lightweight and breathable, it is perfect for everyday wear and easy styling.",
+      "rating": 4.5,
+      "price": 130,
+      "discount": 30,
+      "image": "/images/shirt-orange.svg"
+    },
+    {
+      "id": 5,
+      "name": "vertical stripped shirt",
+      "description": "A trendy t-shirt designed with stylish tape details for a modern edge. Made with breathable fabric, it ensures comfort and effortless style.",
+      "rating": 5,
+      "price": 212,
+      "discount": 20,
+      "image": "/images/striped-t-shirt.svg"
+    },
+    {
+      "id": 6,
+      "name": "courage graphic t-shirt",
+      "description": "These skinny fit jeans provide a sleek and modern silhouette. Crafted with stretchable fabric, they ensure comfort and flexibility all day.",
+      "rating": 4,
+      "price": 145,
+      "discount": 0,
+      "image": "/images/graphic-t-shirt.svg"
+    },
+    {
+      "id": 7,
+      "name": "loose fit bermuda shorts",
+      "description": "A timeless checkered shirt perfect for smart-casual looks. Its soft cotton fabric provides breathable comfort and effortless everyday style.",
+      "rating": 3,
+      "price": 80,
+      "discount": 0,
+      "image": "/images/shorts1.svg"
+    }
+  ]
+}

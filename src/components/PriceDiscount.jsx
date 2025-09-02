@@ -8,18 +8,18 @@ const PriceDiscount = ({ price, discount }) => {
 
   return (
     <div className="flex gap-1.25 items-center">
-      <span className="text-xl font-bold xl:text-2xl">{`${
+      <span className="text-lg md:text-xl font-bold xl:text-2xl">{`${
         discount > 0 ? `$${calcDiscount(price, discount)}` : ""
       }`}</span>
 
       <span
-        className={`text-xl font-bold xl:text-2xl ${
+        className={`text-lg md:text-xl font-bold xl:text-2xl ${
           discount > 0 ? "line-through opacity-40" : ""
         }`}
       >{`$${price}`}</span>
 
       <span
-        className={`text-xs font-medium rounded-full text-red-500 px-2 py-.75 xl:text-2xl ${
+        className={`text-lg md:text-xl font-medium rounded-full text-red-500 px-2 py-.75 xl:text-2xl ${
           discount > 0 ? "bg-red-200" : ""
         }`}
       >{`${discount > 0 ? `${discount}%` : ""}`}</span>

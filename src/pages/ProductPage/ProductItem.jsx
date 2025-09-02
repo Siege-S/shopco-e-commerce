@@ -5,9 +5,10 @@ import PriceDiscount from "../../components/PriceDiscount";
 import { Link } from "react-router-dom";
 
 const ProductItems = () => {
-  const { id } = useParams();
+  const { id, productName } = useParams();
   const [product, setProduct] = useState({});
-  //   console.log("ID: " + id);
+  // console.log("ID: " + id);
+  // console.log("Name: " + productName);
   const [colorOption, setColorOption] = useState("brown");
   const [sizeOption, setSizeOption] = useState("large");
   const [productQuantity, setProductQuatity] = useState(1);
@@ -31,7 +32,8 @@ const ProductItems = () => {
     color,
     size,
     quantity,
-    discount
+    discount,
+    image
   ) => {
     // Find Existing Item then add Quantity
     const found = cartItems.find(
@@ -61,6 +63,7 @@ const ProductItems = () => {
         size: size,
         quantity: quantity,
         discount: discount,
+        image: image,
       };
       // console.log(productItem);
       setCartItems((prevState) => [...prevState, productItem]);
@@ -68,14 +71,30 @@ const ProductItems = () => {
   };
 
   useEffect(() => {
-    fetch("/newArrivalItems.json")
+    fetch("/shopco.json")
       .then((result) => result.json())
       .then((data) => {
-        const getItem = data.find((item) => item.id === Number(id));
-        // console.log(getItem);
-        setProduct(getItem);
+        if (id <= 4) {
+          const getItem = data.NewArrival.find(
+            (item) => item.id === Number(id)
+          );
+          // console.log(getItem);
+          setProduct(getItem);
+        } else if (id > 4 && id <= 8) {
+          const getItem = data.TopSelling.find(
+            (item) => item.id === Number(id)
+          );
+          // console.log(getItem);
+          setProduct(getItem);
+        } else {
+          const getItem = data.CategoryItems.find(
+            (item) => item.id === Number(id)
+          );
+          // console.log(getItem);
+          setProduct(getItem);
+        }
       });
-    console.log(cartItems);
+    // console.log(cartItems);
 
     // Update localStorage
     const myCart = {
@@ -337,7 +356,8 @@ const ProductItems = () => {
                     colorOption,
                     sizeOption,
                     productQuantity,
-                    product.discount
+                    product.discount,
+                    product.image
                   )
                 }
               >

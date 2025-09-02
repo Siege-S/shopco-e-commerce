@@ -25,7 +25,7 @@ const Footer = () => {
               />
             </div>
 
-            <button className="bg-white text-black py-3 w-full text-sm font-medium rounded-full">
+            <button className="bg-white text-black py-3 w-full text-sm font-medium rounded-full hover:text-white hover:bg-white/0 hover:border-3 active:text-white active:bg-white/0 active:border-3 duration-100">
               Subscribe to Newsletter
             </button>
           </div>

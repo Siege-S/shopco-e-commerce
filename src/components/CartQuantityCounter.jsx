@@ -23,14 +23,14 @@ const CartQuantityCounter = ({
   }, [productQuantity]);
 
   return (
-    <div className="bg-[#F0F0F0] flex rounded-full py-2 px-4 gap-5 justify-center items-center">
+    <div className="bg-[#F0F0F0] flex rounded-full py-2 px-4 gap-3 md:gap-5 justify-center items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={3}
         stroke="currentColor"
-        className="size-5 cursor-pointer"
+        className="size-4 md:size-5 cursor-pointer"
         onClick={minusQuantity}
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" />
@@ -43,7 +43,7 @@ const CartQuantityCounter = ({
         viewBox="0 0 24 24"
         strokeWidth={3}
         stroke="currentColor"
-        className="size-5 cursor-pointer"
+        className="size-4 md:size-5 cursor-pointer"
         onClick={addQuantity}
       >
         <path

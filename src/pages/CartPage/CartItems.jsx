@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import dress1 from "../../assets/images/figure1.svg";
 import deleteIcon from "../../assets/icons/delete-icon.svg";
 import CartQuantityCounter from "../../components/CartQuantityCounter";
+import PriceDiscount from "../../components/PriceDiscount";
 const CartItems = () => {
   const cart = JSON.parse(localStorage.getItem("cart") || "{}");
   const [cartItems, setCartItems] = useState(cart.cartItems || []);
 
+  const navigate = useNavigate();
   const updateCart = (id, size, color, quantity) => {
     setCartItems((prevState) =>
       prevState.map((item) =>
@@ -33,17 +35,21 @@ const CartItems = () => {
   }, [cartItems]);
 
   // Calculate
-  const subTotal = cartItems.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
+  const subTotal = Math.round(
+    cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
   );
-  const totalDiscount = cartItems.reduce(
-    (sum, item) => sum + item.quantity * (item.price * (item.discount / 100)),
-    0
+  const totalDiscount = Math.round(
+    cartItems.reduce(
+      (sum, item) => sum + item.quantity * (item.price * (item.discount / 100)),
+      0
+    )
   );
-  const total = subTotal - totalDiscount;
-  let discountPercentage = Math.round(100 * (totalDiscount / subTotal));
+  const total = Math.round(subTotal - totalDiscount);
+  let discountPercentage = Math.round((totalDiscount / subTotal) * 100);
 
+  const goToProduct = (id, name) => {
+    navigate(`/shop/product/${id}/${name}`);
+  };
   return (
     <section className="container mx-auto px-4 xl:px-0 ">
       <nav className="mt-5">
@@ -85,9 +91,12 @@ const CartItems = () => {
           <div className="px-3.5 h-fit rounded-[20px] border-2 border-black/10 divide-y-2 divide-black/10 lg:flex-1">
             {cartItems.map((item, index) => (
               <div className="flex gap-3.5 py-4" key={index}>
-                <div className="rounded-lg overflow-hidden size-25 md:size-31">
+                <div
+                  className="rounded-lg overflow-hidden size-25 cursor-pointer md:size-31"
+                  onClick={() => goToProduct(item.id, item.name)}
+                >
                   <img
-                    src={dress1}
+                    src={item.image}
                     alt={item.name}
                     className="h-full w-full object-cover "
                   />
@@ -96,13 +105,16 @@ const CartItems = () => {
                 <div className="flex flex-col flex-1 justify-between">
                   <div>
                     <div className="flex justify-between ">
-                      <strong className="capitalize md:text-xl">
+                      <strong
+                        className="capitalize cursor-pointer md:text-xl"
+                        onClick={() => goToProduct(item.id, item.name)}
+                      >
                         {item.name}
                       </strong>
                       <img
                         src={deleteIcon}
                         alt="delete-button"
-                        className="size-4"
+                        className="size-4 cursor-pointer"
                         onClick={() =>
                           deleteItem(item.id, item.size, item.color)
                         }
@@ -114,15 +126,24 @@ const CartItems = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-xl font-bold md:text-2xl">{`$${item.price}`}</span>
-                    <CartQuantityCounter
-                      itemID={item.id}
-                      itemSize={item.size}
-                      itemColor={item.color}
-                      itemQuantity={item.quantity}
-                      updateCart={updateCart}
-                    />
+                  <div className="flex flex-wrap justify-between">
+                    {/* <span className="text-xl font-bold md:text-2xl">{`$${item.price}`}</span> */}
+                    <div>
+                      <PriceDiscount
+                        price={item.price}
+                        discount={item.discount}
+                      />
+                    </div>
+
+                    <div>
+                      <CartQuantityCounter
+                        itemID={item.id}
+                        itemSize={item.size}
+                        itemColor={item.color}
+                        itemQuantity={item.quantity}
+                        updateCart={updateCart}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -180,12 +201,12 @@ const CartItems = () => {
                 />
               </div>
 
-              <button className="bg-black text-white w-22 py-3.75 rounded-full md:w-30">
+              <button className="bg-black text-white w-22 py-3.75 rounded-full hover:bg-black/80 cursor-pointer active:bg-black/80 md:w-30">
                 Apply
               </button>
             </div>
-            <button className="flex gap-3 justify-center bg-black text-white rounded-full w-full py-4.25 ">
-              <span className="text-sm md:text-base">Go to Checkout</span>
+            <button className="flex gap-3 justify-center bg-black text-white rounded-full w-full py-4.25 hover:bg-black/80 cursor-pointer active:bg-black/80 ">
+              <span className="text-sm md:text-base ">Go to Checkout</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

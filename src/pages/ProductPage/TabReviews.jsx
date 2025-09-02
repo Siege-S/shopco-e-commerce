@@ -5,11 +5,11 @@ import ReviewCard from "./ReviewCard";
 const TabReviews = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("/tabReviews.json")
+    fetch("/shopco.json")
       .then((result) => result.json())
       .then((data) => {
         // console.log(data);
-        setReviews(data);
+        setReviews(data.TabReviews);
       });
   }, []);
   return (

@@ -1,70 +1,22 @@
 import React, { useEffect, useState } from "react";
-
 import filterIcon from "../../assets/icons/filter_icon.svg";
 import StarRating from "../../components/StarRating";
-// Images
-import dress1 from "../../../php/uploads/graphic-t-shirt.svg";
-import dress2 from "../../../php/uploads/polo-shirt.svg";
-import dress3 from "../../../php/uploads/black-and-white-shirt.svg";
-import dress4 from "../../../php/uploads/jeans1.svg";
-import dress5 from "../../../php/uploads/checkered1.svg";
-import dress6 from "../../../php/uploads/striped-t-shirt.svg";
-
 import FilterAside from "../../components/FilterAside";
+import PriceDiscount from "../../components/PriceDiscount";
 import { Link } from "react-router-dom";
-// const items = [
-//   {
-//     name: "gradient graphic t-shirt",
-//     rating: 3.5,
-//     price: 145,
-//     discount: 0,
-//     image: dress1,
-//   },
-//   {
-//     name: "polo with tipping details",
-//     rating: 4.5,
-//     price: 180,
-//     discount: 0,
-//     image: dress2,
-//   },
-//   {
-//     name: "black striped t-shirt",
-//     rating: 5,
-//     price: 120,
-//     discount: 30,
-//     image: dress3,
-//   },
-//   {
-//     name: "skinny fit jeans",
-//     rating: 3.5,
-//     price: 240,
-//     discount: 20,
-//     image: dress4,
-//   },
-//   {
-//     name: "checkered shirt",
-//     rating: 4.5,
-//     price: 180,
-//     discount: 0,
-//     image: dress5,
-//   },
-//   {
-//     name: "sleeve striped t-shirt",
-//     rating: 4.5,
-//     price: 130,
-//     discount: 30,
-//     image: dress6,
-//   },
-// ];
-
+import { useNavigate } from "react-router-dom";
 const CategoryPage = ({ toggleFilter }) => {
   const [clothesItems, setClothesItems] = useState([]);
+  const navigate = useNavigate();
+  const goToProduct = (id, name) => {
+    navigate(`/shop/product/${id}/${name}`);
+  };
   useEffect(() => {
-    fetch("/categoryItems.json")
+    fetch("/shopco.json")
       .then((result) => result.json())
       .then((data) => {
-        console.log(data);
-        setClothesItems(data);
+        // console.log(data.CategoryItems);
+        setClothesItems(data.CategoryItems);
       });
   }, []);
   return (
@@ -120,19 +72,28 @@ const CategoryPage = ({ toggleFilter }) => {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-x-3 gap-y-6">
               {clothesItems.map((data, index) => (
-                <figure key={index}>
-                  <img
-                    className="w-full mb-2"
-                    src={data.image}
-                    alt={data.name}
-                  />
+                <figure
+                  key={index}
+                  onClick={() => goToProduct(data.id, data.name)}
+                >
+                  <div className="overflow-hidden rounded-[20px] bg-lightGrey mb-2 md:mb-4">
+                    <img
+                      className="w-full hover:scale-110 ease-in duration-100"
+                      src={data.image}
+                      alt={data.name}
+                    />
+                  </div>
+
                   <div className="flex flex-col gap-y-1">
                     <strong className="capitalize">{data.name}</strong>
                     <div className="flex gap-2 items-center">
                       <StarRating value={data.rating} max={5} />
                       <span className="text-xs">{data.rating}/5</span>
                     </div>
-                    <strong>{data.price}$</strong>
+                    <PriceDiscount
+                      price={data.price}
+                      discount={data.discount}
+                    />
                   </div>
                 </figure>
               ))}
