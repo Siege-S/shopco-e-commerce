@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TabProductDetails from "./TabProductDetails";
 import TabReviews from "./TabReviews";
-import TabFaqs from "./Tabfaqs";
+import TabFaqs from "./TabFaqs";
 const Tabs = () => {
   const [activeTab, setActiveTab] = useState(2);
   const tabComponents = {
