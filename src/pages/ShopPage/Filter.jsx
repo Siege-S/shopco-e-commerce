@@ -1,8 +1,9 @@
 import React from "react";
 import PriceRangeSlider from "../../components/PriceRangeSlider";
-import ColorFilter from "../../components/ColorFIlter";
+
 import SizeFilter from "../../components/SizeFilter";
 import DressStyleFilter from "../../components/DressStyleFilter";
+import FilterColor from "../../components/FilterColor";
 const Filter = ({ isFilterOpen, toggleFilter }) => {
   return (
     <>
@@ -132,7 +133,7 @@ const Filter = ({ isFilterOpen, toggleFilter }) => {
 
         <hr className="border-1 opacity-10 " />
         <div className="py-5">
-          <ColorFilter />
+          <FilterColor />
         </div>
 
         <hr className="border-1 opacity-10 " />

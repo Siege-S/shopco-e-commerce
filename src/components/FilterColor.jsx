@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ColorFilter = () => {
+const FilterColor = () => {
   const [selected, setSelected] = useState(1);
   const [isColorMenuOpen, setIsColorMenuOpen] = useState(true);
   const toggleColorMenu = () => {
@@ -247,4 +247,4 @@ const ColorFilter = () => {
   );
 };
 
-export default ColorFilter;
+export default FilterColor;

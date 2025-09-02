@@ -1,9 +1,9 @@
 import React from "react";
 import PriceRangeSlider from "./PriceRangeSlider";
-import ColorFilter from "./ColorFIlter";
 import SizeFilter from "./SizeFilter";
 import DressStyleFilter from "./DressStyleFilter";
 import FilterIcon from "../assets/icons/filter_icon_gray.svg";
+import FilterColor from "./FilterColor";
 const FilterAside = () => {
   return (
     <>
@@ -110,7 +110,7 @@ const FilterAside = () => {
 
         <hr className="border-1 opacity-10 " />
         <div className="py-5">
-          <ColorFilter />
+          <FilterColor />
         </div>
 
         <hr className="border-1 opacity-10 " />
