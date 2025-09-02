@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SideBar = ({ isSideBarOpen, toggleSideBar }) => {
   const [isBtnMenuOpen, setIsBtnMenuOpen] = useState(false);
@@ -15,6 +16,7 @@ const SideBar = ({ isSideBarOpen, toggleSideBar }) => {
           className="fixed top-0 bg-black opacity-50 h-full w-full z-50"
           onClick={() => {
             toggleSideBar();
+            setIsBtnMenuOpen(false);
           }}
         ></div>
       )}
@@ -75,37 +77,73 @@ const SideBar = ({ isSideBarOpen, toggleSideBar }) => {
             >
               <ul className="border-l-2 border-lightGrey">
                 <li>
-                  <a href="" className="flex p-2 ">
-                    Men's Clothes
-                  </a>
+                  <Link
+                    to="/shop"
+                    onClick={() => {
+                      toggleSideBar();
+                      setIsBtnMenuOpen(false);
+                    }}
+                  >
+                    <span className="flex p-2 ">Men's Clothes</span>
+                  </Link>
                 </li>
                 <li>
-                  <a href="" className="flex p-2 ">
-                    Women's Clothes
-                  </a>
+                  <Link
+                    to="/shop"
+                    onClick={() => {
+                      toggleSideBar();
+                      setIsBtnMenuOpen(false);
+                    }}
+                  >
+                    <span className="flex p-2 ">Women's Clothes</span>
+                  </Link>
                 </li>
                 <li>
-                  <a href="" className="flex p-2">
-                    Children's Clothes
-                  </a>
+                  <Link
+                    to="/shop"
+                    onClick={() => {
+                      toggleSideBar();
+                      setIsBtnMenuOpen(false);
+                    }}
+                  >
+                    <span className="flex p-2 ">Children's Clothes</span>
+                  </Link>
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            <a href="" className="flex py-2">
-              On Sale
-            </a>
+            <Link
+              to="/shop"
+              onClick={() => {
+                toggleSideBar();
+                setIsBtnMenuOpen(false);
+              }}
+            >
+              <span className="flex py-2 ">On Sale</span>
+            </Link>
           </li>
           <li>
-            <a href="" className="flex py-2">
-              New Arrivals
-            </a>
+            <Link
+              to="/shop"
+              onClick={() => {
+                toggleSideBar();
+                setIsBtnMenuOpen(false);
+              }}
+            >
+              <span className="flex py-2 ">New Arrivals</span>
+            </Link>
           </li>
           <li>
-            <a href="" className="flex py-2">
-              Brands
-            </a>
+            <Link
+              to="/shop"
+              onClick={() => {
+                toggleSideBar();
+                setIsBtnMenuOpen(false);
+              }}
+            >
+              <span className="flex py-2 ">New Arrivals</span>
+            </Link>
           </li>
         </ul>
       </aside>

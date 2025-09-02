@@ -5,8 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 const NewArrivalSection = () => {
   const [data, setData] = useState([]);
 
-  const getAPI = import.meta.env.VITE_API_URL_GET_NEW_ARRIVAL;
-  const getApiImage = import.meta.env.VITE_API_IMAGE_PATH;
+  // const getAPI = import.meta.env.VITE_API_URL_GET_NEW_ARRIVAL;
+  // const getApiImage = import.meta.env.VITE_API_IMAGE_PATH;
 
   const navigate = useNavigate();
   const handleClick = (id, item) => {
@@ -18,7 +18,7 @@ const NewArrivalSection = () => {
         .then((res) => res.json())
         .then((data) => {
           setData(data);
-          console.log(data);
+          // console.log(data);
         })
         .catch((error) => console.error(error));
     } catch (error) {}

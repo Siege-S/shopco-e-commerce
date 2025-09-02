@@ -328,7 +328,7 @@ const ProductItems = () => {
                 </svg>
               </div>
               <button
-                className="w-full text-sm text-white bg-black rounded-full cursor-pointer hover:bg-black/20 hover:text-black duration-200"
+                className="w-full text-sm text-white bg-black rounded-full cursor-pointer hover:bg-black/20 hover:text-black duration-200 active:bg-black/20"
                 onClick={() =>
                   handleAddToCart(
                     id,
