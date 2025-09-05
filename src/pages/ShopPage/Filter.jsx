@@ -144,7 +144,7 @@ const Filter = ({ isFilterOpen, toggleFilter }) => {
         <div className="py-5">
           <DressStyleFilter />
         </div>
-        <button className="w-full rounded-full mb-6 py-3.5 text-sm bg-black text-white">
+        <button className="w-full rounded-full mb-6 py-3.5 text-sm bg-black text-white hover:bg-black/90 cursor-pointer">
           Apply Filter
         </button>
       </aside>

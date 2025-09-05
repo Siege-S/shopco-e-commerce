@@ -5,9 +5,13 @@ import BrandZara from "../../assets/logos/brand-zara.svg";
 import BrandGucci from "../../assets/logos/brand-gucci.svg";
 import BrandPrada from "../../assets/logos/brand-prada.svg";
 import BrandCalvin from "../../assets/logos/brand-calvinklein.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const goToShop = () => {
+    navigate("/shop");
+  };
   return (
     <>
       <section className="container mx-auto px-4 xl:px-0 md:flex">
@@ -20,11 +24,13 @@ const HeroSection = () => {
             designed to bring out your individuality and cater to your sense of
             style.
           </p>
-          <Link to="/shop">
-            <button className="bg-black py-3.75 text-white font-medium cursor-pointer w-full rounded-full duration-300 hover:bg-black/80 active:bg-black/90 mb-5 md:w-52.5 xl:mb-12">
-              Shop Now
-            </button>
-          </Link>
+
+          <button
+            className="bg-black py-3.75 text-white font-medium cursor-pointer w-full rounded-full duration-300 hover:bg-black/80 active:bg-black/90 mb-5 md:w-52.5 xl:mb-12"
+            onClick={goToShop}
+          >
+            Shop Now
+          </button>
 
           <div className="lg:flex pb-5">
             <div className="flex mb-3 flex-2/3 lg:mb-0">

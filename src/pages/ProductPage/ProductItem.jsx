@@ -155,20 +155,32 @@ const ProductItems = () => {
             <div className=" rounded-[20px] overflow-hidden mb-3 lg:mb-0 lg:w-full  xl:w-111 xl:h-132.5 bg-lightGrey">
               <img
                 src={product.image}
-                className="w-full lg:h-full lg:my-auto"
+                className="w-full lg:h-full lg:my-auto hover:scale-110 ease-in duration-100"
                 alt={`product-${product.id}`}
               />
             </div>
 
             <div className="flex gap-x-3 gap-y-3.5 mb-5 xl:mb-0 lg:flex-col lg:w-38 xl:justify-between  xl:h-132.5">
               <div className="rounded-[20px] overflow-hidden xl:h-41.75 bg-lightGrey">
-                <img src={product.image} alt={`product-${product.id}`} />
+                <img
+                  className="hover:scale-110 ease-in duration-100"
+                  src={product.image}
+                  alt={`product-${product.id}`}
+                />
               </div>
               <div className=" rounded-[20px] overflow-hidden xl:h-41.75 bg-lightGrey">
-                <img src={product.image} alt={`product-${product.id}`} />
+                <img
+                  className="hover:scale-110 ease-in duration-100"
+                  src={product.image}
+                  alt={`product-${product.id}`}
+                />
               </div>
               <div className=" rounded-[20px] overflow-hidden xl:h-41.75 bg-lightGrey">
-                <img src={product.image} alt={`product-${product.id}`} />
+                <img
+                  className="hover:scale-110 ease-in duration-100"
+                  src={product.image}
+                  alt={`product-${product.id}`}
+                />
               </div>
             </div>
           </figure>

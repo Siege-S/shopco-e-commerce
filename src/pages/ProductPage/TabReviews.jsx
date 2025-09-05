@@ -47,7 +47,7 @@ const TabReviews = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <button className=" px-9 py-3.5 rounded-full border border-black/10">
+        <button className=" px-9 py-3.5 rounded-full border border-black/10 hover:border-black cursor-pointer">
           Load More Reviews
         </button>
       </div>
