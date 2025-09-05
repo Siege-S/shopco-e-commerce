@@ -16,7 +16,7 @@ const SizeFilter = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={`size-6 duration-500 ${
+          className={`size-6 duration-500 cursor-pointer ${
             isSizeMenuOpen ? "" : "-rotate-180"
           }`}
         >
@@ -34,7 +34,7 @@ const SizeFilter = () => {
         }`}
       >
         <button
-          className={`py-2.5 px-5 rounded-full text-sm  ${
+          className={`py-2.5 px-5 rounded-full text-sm cursor-pointer ${
             selectedButton === 1
               ? "bg-black text-white"
               : "bg-lightGrey text-black/60"
@@ -45,7 +45,7 @@ const SizeFilter = () => {
         </button>
 
         <button
-          className={`py-2.5 px-5 rounded-full text-sm  ${
+          className={`py-2.5 px-5 rounded-full text-sm cursor-pointer ${
             selectedButton === 2
               ? "bg-black text-white"
               : "bg-lightGrey text-black/60"
@@ -56,7 +56,7 @@ const SizeFilter = () => {
         </button>
 
         <button
-          className={`py-2.5 px-5 rounded-full text-sm  ${
+          className={`py-2.5 px-5 rounded-full text-sm cursor-pointer ${
             selectedButton === 3
               ? "bg-black text-white"
               : "bg-lightGrey text-black/60"
@@ -67,7 +67,7 @@ const SizeFilter = () => {
         </button>
 
         <button
-          className={`py-2.5 px-5 rounded-full text-sm  ${
+          className={`py-2.5 px-5 rounded-full text-sm cursor-pointer ${
             selectedButton === 4
               ? "bg-black text-white"
               : "bg-lightGrey text-black/60"
@@ -78,7 +78,7 @@ const SizeFilter = () => {
         </button>
 
         <button
-          className={`py-2.5 px-5 rounded-full text-sm  ${
+          className={`py-2.5 px-5 rounded-full text-sm cursor-pointer ${
             selectedButton === 5
               ? "bg-black text-white"
               : "bg-lightGrey text-black/60"
@@ -89,7 +89,7 @@ const SizeFilter = () => {
         </button>
 
         <button
-          className={`py-2.5 px-5 rounded-full text-sm  ${
+          className={`py-2.5 px-5 rounded-full text-sm cursor-pointer ${
             selectedButton === 6
               ? "bg-black text-white"
               : "bg-lightGrey text-black/60"
@@ -100,7 +100,7 @@ const SizeFilter = () => {
         </button>
 
         <button
-          className={`py-2.5 px-5 rounded-full text-sm  ${
+          className={`py-2.5 px-5 rounded-full text-sm cursor-pointer ${
             selectedButton === 7
               ? "bg-black text-white"
               : "bg-lightGrey text-black/60"
@@ -111,7 +111,7 @@ const SizeFilter = () => {
         </button>
 
         <button
-          className={`py-2.5 px-5 rounded-full text-sm  ${
+          className={`py-2.5 px-5 rounded-full text-sm cursor-pointer ${
             selectedButton === 8
               ? "bg-black text-white"
               : "bg-lightGrey text-black/60"
@@ -122,7 +122,7 @@ const SizeFilter = () => {
         </button>
 
         <button
-          className={`py-2.5 px-5 rounded-full text-sm  ${
+          className={`py-2.5 px-5 rounded-full text-sm cursor-pointer ${
             selectedButton === 9
               ? "bg-black text-white"
               : "bg-lightGrey text-black/60"

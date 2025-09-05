@@ -21,7 +21,7 @@ function PriceRangeSlider() {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={`size-6 duration-500 ${
+          className={`size-6 duration-500 cursor-pointer ${
             isPriceMenuOpen ? "" : "-rotate-180"
           }`}
         >

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import StarRating from "../../components/StarRating";
 import PriceDiscount from "../../components/PriceDiscount";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartProvider";
 
 const ProductItems = () => {
   const { id, productName } = useParams();
@@ -12,61 +13,15 @@ const ProductItems = () => {
   const [colorOption, setColorOption] = useState("brown");
   const [sizeOption, setSizeOption] = useState("large");
   const [productQuantity, setProductQuatity] = useState(1);
-  const [cart, setCart] = useState(
-    JSON.parse(localStorage.getItem("cart")) || "{}"
-  );
-  const [cartItems, setCartItems] = useState(cart.cartItems || []);
+
+  const { addToCart } = useContext(CartContext);
+
   const addQuantity = () => {
     setProductQuatity((prevState) => prevState + 1);
   };
   const minusQuantity = () => {
     if (productQuantity > 1) {
       setProductQuatity((prevState) => prevState - 1);
-    }
-  };
-
-  const handleAddToCart = (
-    productID,
-    name,
-    price,
-    color,
-    size,
-    quantity,
-    discount,
-    image
-  ) => {
-    // Find Existing Item then add Quantity
-    const found = cartItems.find(
-      (item) =>
-        item.id === Number(productID) &&
-        item.color === color &&
-        item.size === size
-    );
-
-    if (found) {
-      const newCartItems = cartItems.map((item) =>
-        item.id === Number(productID) &&
-        item.color === color &&
-        item.size === size
-          ? { ...item, quantity: item.quantity + quantity }
-          : item
-      );
-      console.log(newCartItems);
-      setCartItems(newCartItems);
-    } else {
-      // Else if item does not exist add New Item
-      const productItem = {
-        id: Number(productID),
-        name: name,
-        price: price,
-        color: color,
-        size: size,
-        quantity: quantity,
-        discount: discount,
-        image: image,
-      };
-      // console.log(productItem);
-      setCartItems((prevState) => [...prevState, productItem]);
     }
   };
 
@@ -95,13 +50,7 @@ const ProductItems = () => {
         }
       });
     // console.log(cartItems);
-
-    // Update localStorage
-    const myCart = {
-      cartItems: cartItems,
-    };
-    localStorage.setItem("cart", JSON.stringify(myCart));
-  }, [id, cartItems]);
+  }, [id]);
 
   return (
     <>
@@ -361,7 +310,7 @@ const ProductItems = () => {
               <button
                 className="w-full text-sm text-white bg-black rounded-full cursor-pointer hover:bg-black/20 hover:text-black duration-200 active:bg-black/20"
                 onClick={() =>
-                  handleAddToCart(
+                  addToCart(
                     id,
                     product.name,
                     product.price,

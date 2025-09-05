@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartProvider";
 
 const Header = ({ toggleSideBar }) => {
+  const { cartItemsCount, cartItems } = useContext(CartContext);
   return (
     <header className="bg-white shadow-xs">
       <div className="flex container mx-auto py-6 px-4 xl:px-0 w-full justify-between">
@@ -43,7 +45,12 @@ const Header = ({ toggleSideBar }) => {
           <i className="fa-solid fa-magnifying-glass text-2xl md:!hidden"></i>
 
           <Link to="/cart">
-            <i className="fa-solid fa-cart-shopping text-2xl cursor-pointer"></i>
+            <div className="relative">
+              <i className="fa-solid fa-cart-shopping text-2xl cursor-pointer"></i>
+              <span className="absolute -top-3 left-1.5 bg-black text-white text-xs px-1.5 py-.5 rounded-full">
+                {cartItems.length > 0 ? cartItemsCount() : ""}
+              </span>
+            </div>
           </Link>
           <i className="fa-regular fa-user text-2xl cursor-pointer"></i>
         </div>

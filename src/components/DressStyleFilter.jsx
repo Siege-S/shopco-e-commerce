@@ -15,7 +15,7 @@ const DressStyleFilter = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={`size-6 transform duration-300 ${
+          className={`size-6 transform duration-300 cursor-pointer ${
             isDressStyleMenuOpen ? "" : "-rotate-180"
           }`}
         >
@@ -34,7 +34,7 @@ const DressStyleFilter = () => {
             : "max-h-0 opacity-0"
         }`}
       >
-        <li className="flex justify-between opacity-60">
+        <li className="flex justify-between opacity-60 cursor-pointer">
           <span>Casual</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +51,7 @@ const DressStyleFilter = () => {
             />
           </svg>
         </li>
-        <li className="flex justify-between opacity-60">
+        <li className="flex justify-between opacity-60 cursor-pointer">
           <span>Formal</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +68,7 @@ const DressStyleFilter = () => {
             />
           </svg>
         </li>
-        <li className="flex justify-between opacity-60">
+        <li className="flex justify-between opacity-60 cursor-pointer">
           <span>Party</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +85,7 @@ const DressStyleFilter = () => {
             />
           </svg>
         </li>
-        <li className="flex justify-between opacity-60">
+        <li className="flex justify-between opacity-60 cursor-pointer">
           <span>Gym</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

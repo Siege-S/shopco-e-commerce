@@ -16,7 +16,7 @@ const FilterAside = () => {
         </div>
 
         <ul className="space-y-5 my-5">
-          <li className="flex justify-between opacity-60">
+          <li className="flex justify-between opacity-60 cursor-pointer">
             <span>T-Shirts</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +33,7 @@ const FilterAside = () => {
               />
             </svg>
           </li>
-          <li className="flex justify-between opacity-60">
+          <li className="flex justify-between opacity-60 cursor-pointer">
             <span>Shorts</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@ const FilterAside = () => {
               />
             </svg>
           </li>
-          <li className="flex justify-between opacity-60">
+          <li className="flex justify-between opacity-60 cursor-pointer">
             <span>Shirts</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ const FilterAside = () => {
               />
             </svg>
           </li>
-          <li className="flex justify-between opacity-60">
+          <li className="flex justify-between opacity-60 cursor-pointer">
             <span>Hoodie</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ const FilterAside = () => {
               />
             </svg>
           </li>
-          <li className="flex justify-between opacity-60">
+          <li className="flex justify-between opacity-60 cursor-pointer">
             <span>Jeans</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"

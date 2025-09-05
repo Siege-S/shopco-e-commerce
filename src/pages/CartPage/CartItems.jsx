@@ -1,38 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import dress1 from "../../assets/images/figure1.svg";
+
 import deleteIcon from "../../assets/icons/delete-icon.svg";
 import CartQuantityCounter from "../../components/CartQuantityCounter";
 import PriceDiscount from "../../components/PriceDiscount";
+import { CartContext } from "../../context/CartProvider";
 const CartItems = () => {
-  const cart = JSON.parse(localStorage.getItem("cart") || "{}");
-  const [cartItems, setCartItems] = useState(cart.cartItems || []);
+  const { cartItems, updateCart, deleteItem } = useContext(CartContext);
 
   const navigate = useNavigate();
-  const updateCart = (id, size, color, quantity) => {
-    setCartItems((prevState) =>
-      prevState.map((item) =>
-        item.id === id && item.size === size && item.color === color
-          ? { ...item, quantity: quantity }
-          : item
-      )
-    );
-  };
-
-  const deleteItem = (id, size, color) => {
-    const newItem = cartItems.filter(
-      (item) => !(item.id === id && item.size === size && item.color === color)
-    );
-    setCartItems(newItem);
-  };
-
-  useEffect(() => {
-    // Update LocalStorage
-    const myCart = {
-      cartItems: cartItems,
-    };
-    localStorage.setItem("cart", JSON.stringify(myCart));
-  }, [cartItems]);
 
   // Calculate
   const subTotal = Math.round(
@@ -90,7 +66,7 @@ const CartItems = () => {
         <div className="flex flex-col gap-5 lg:flex-row">
           <div className="px-3.5 h-fit rounded-[20px] border-2 border-black/10 divide-y-2 divide-black/10 lg:flex-1">
             {cartItems.map((item, index) => (
-              <div className="flex gap-3.5 py-4" key={index}>
+              <div className="flex gap-3.5 py-4" key={`${item.id}-${index}`}>
                 <div
                   className="rounded-lg overflow-hidden size-25 cursor-pointer md:size-31"
                   onClick={() => goToProduct(item.id, item.name)}

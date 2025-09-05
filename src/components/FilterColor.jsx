@@ -16,7 +16,7 @@ const FilterColor = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="currentColor"
-          className={`size-6 duration-500 ${
+          className={`size-6 duration-500 cursor-pointer ${
             isColorMenuOpen ? "" : "-rotate-180"
           }`}
         >
@@ -33,7 +33,7 @@ const FilterColor = () => {
         }`}
       >
         <button
-          className={`size-9 bg-green-600 border-2 border-black/10 rounded-full`}
+          className={`size-9 bg-green-600 border-2 border-black/10 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 1))}
         >
           {selected === 1 && (
@@ -54,7 +54,7 @@ const FilterColor = () => {
           )}
         </button>
         <button
-          className={`size-9 bg-red-600 border-2 border-black/10 rounded-full`}
+          className={`size-9 bg-red-600 border-2 border-black/10 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 2))}
         >
           {selected === 2 && (
@@ -75,7 +75,7 @@ const FilterColor = () => {
           )}
         </button>
         <button
-          className={`size-9 bg-yellow-300 border-2 border-black/10 rounded-full`}
+          className={`size-9 bg-yellow-300 border-2 border-black/10 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 3))}
         >
           {selected === 3 && (
@@ -96,7 +96,7 @@ const FilterColor = () => {
           )}
         </button>
         <button
-          className={`size-9 bg-orange-600 border-2 border-black/10 rounded-full`}
+          className={`size-9 bg-orange-600 border-2 border-black/10 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 4))}
         >
           {selected === 4 && (
@@ -117,7 +117,7 @@ const FilterColor = () => {
           )}
         </button>
         <button
-          className={`size-9 bg-blue-300 border-2 border-black/10 rounded-full`}
+          className={`size-9 bg-blue-300 border-2 border-black/10 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 5))}
         >
           {selected === 5 && (
@@ -138,7 +138,7 @@ const FilterColor = () => {
           )}
         </button>
         <button
-          className={`size-9 bg-blue-700 border-2 border-black/10 rounded-full`}
+          className={`size-9 bg-blue-700 border-2 border-black/10 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 6))}
         >
           {selected === 6 && (
@@ -159,7 +159,7 @@ const FilterColor = () => {
           )}
         </button>
         <button
-          className={`size-9 bg-violet-500 border-2 border-black/10 rounded-full`}
+          className={`size-9 bg-violet-500 border-2 border-black/10 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 7))}
         >
           {selected === 7 && (
@@ -180,7 +180,7 @@ const FilterColor = () => {
           )}
         </button>
         <button
-          className={`size-9 bg-pink-500 border-2 border-black/10 rounded-full`}
+          className={`size-9 bg-pink-500 border-2 border-black/10 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 8))}
         >
           {selected === 8 && (
@@ -201,7 +201,7 @@ const FilterColor = () => {
           )}
         </button>
         <button
-          className={`size-9 bg-white border-2 border-black/10 rounded-full`}
+          className={`size-9 bg-white border-2 border-black/10 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 9))}
         >
           {selected === 9 && (
@@ -222,7 +222,7 @@ const FilterColor = () => {
           )}
         </button>
         <button
-          className={`size-9 bg-black border-2 border-white/30 rounded-full`}
+          className={`size-9 bg-black border-2 border-white/30 rounded-full cursor-pointer`}
           onClick={() => setSelected((prevState) => (prevState = 10))}
         >
           {selected === 10 && (
@@ -232,7 +232,7 @@ const FilterColor = () => {
               viewBox="0 0 24 24"
               strokeWidth={3}
               stroke="currentColor"
-              className="size-4 m-auto text-white"
+              className="size-4 m-auto text-white "
             >
               <path
                 strokeLinecap="round"
