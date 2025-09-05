@@ -66,7 +66,10 @@ const CartItems = () => {
         <div className="flex flex-col gap-5 lg:flex-row">
           <div className="px-3.5 h-fit rounded-[20px] border-2 border-black/10 divide-y-2 divide-black/10 lg:flex-1">
             {cartItems.map((item, index) => (
-              <div className="flex gap-3.5 py-4" key={`${item.id}-${index}`}>
+              <div
+                className="flex gap-3.5 py-4"
+                key={`${item.id}-${index}-${item.size}-${item.color}`}
+              >
                 <div
                   className="rounded-lg overflow-hidden size-25 cursor-pointer md:size-31"
                   onClick={() => goToProduct(item.id, item.name)}
